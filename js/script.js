@@ -26,4 +26,44 @@ $(document).ready(function() {
 		//Stop Link Behavior
 		return false;
 	});
+
+	// Mouseenter overlay
+	$('ul#galley li').on('mouseenter', function (){
+		//Get data attribute values
+		var title = $(this).children().data('title');
+		var desc = $(this).children().data('desc');
+
+		// Validation
+		if(desc == null) {
+			desc = 'click to Enlarge';
+		}
+
+		if(title == null) {
+			title = '';
+		}
+
+		// Create overlay div
+		$(this).append('<div class="overlay"></div>');
+
+		//Get the overlay div
+		var overlay = $(this).children('.overlay');
+
+		// Add HTML to overlay
+		overlay.html('<h3>'+ title + '</h3><p>'+ desc + '</p>');
+
+		// Fade in overlay
+		overlay.fadeIn(800);
+	});
+
+	// Mouseleave Overlay
+	$('ul#gallery li').on('mouseleave', function() {
+		// Create overlay div
+		$(this).append('<div class="overlay"></div>');
+
+		//Get the overlay div
+		var overlay = $(this).children('.overlay');
+
+		//Fade out overlay
+		overlay.fadeOut(500);
+	});;
 });
