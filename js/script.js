@@ -13,7 +13,7 @@ $(document).ready(function() {
 
 		//Remove hidden class if 'all-projects' is selected
 		if(category == 'all-projects') {
-			$('ul #gallery li:hidden').fadeIn('slow').removeClass('hidden');
+			$('ul#gallery li:hidden').fadeIn('slow').removeClass('hidden');
 		} else {
 			$('ul#gallery li').each(function(){
 				if(!$(this).hasClass(category)) {
@@ -28,10 +28,12 @@ $(document).ready(function() {
 	});
 
 	// Mouseenter overlay
-	$('ul#galley li').on('mouseenter', function (){
+	$('ul#gallery li').on('mouseenter', function (){
+		console.log('entering mouseenter function')
 		//Get data attribute values
 		var title = $(this).children().data('title');
 		var desc = $(this).children().data('desc');
+		console.log('after variables');
 
 		// Validation
 		if(desc == null) {
@@ -44,6 +46,7 @@ $(document).ready(function() {
 
 		// Create overlay div
 		$(this).append('<div class="overlay"></div>');
+		console.log('creating variables');
 
 		//Get the overlay div
 		var overlay = $(this).children('.overlay');
