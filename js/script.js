@@ -29,11 +29,9 @@ $(document).ready(function() {
 
 	// Mouseenter overlay
 	$('ul#gallery li').on('mouseenter', function (){
-		console.log('entering mouseenter function')
 		//Get data attribute values
 		var title = $(this).children().data('title');
 		var desc = $(this).children().data('desc');
-		console.log('after variables');
 
 		// Validation
 		if(desc == null) {
@@ -46,7 +44,6 @@ $(document).ready(function() {
 
 		// Create overlay div
 		$(this).append('<div class="overlay"></div>');
-		console.log('creating variables');
 
 		//Get the overlay div
 		var overlay = $(this).children('.overlay');
