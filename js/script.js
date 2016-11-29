@@ -13,7 +13,7 @@ $(document).ready(function() {
 
 		//Remove hidden class if 'all-projects' is selected
 		if(category == 'all-projects') {
-			$('ul#gallery li:hidden').fadeIn('slow').removeClass('hidden');
+			$('ul #gallery li:hidden').fadeIn('slow').removeClass('hidden');
 		} else {
 			$('ul#gallery li').each(function(){
 				if(!$(this).hasClass(category)) {
